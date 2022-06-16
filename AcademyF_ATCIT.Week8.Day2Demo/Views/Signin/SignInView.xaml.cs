@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcademyF_ATCIT.Week8.Day2Demo.ViewModels.SignIn;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,22 +14,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AcademyF_ATCIT.Week8.WPF.AppBase.Views
+namespace AcademyF_ATCIT.Week8.Day2Demo.Views.Signin
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SignInView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SignInView : Window
     {
-        public MainWindow()
+        public SignInView()
         {
             InitializeComponent();
 
+            SignInViewModel vm = new SignInViewModel();
+            this.DataContext = vm;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoginCommand(object sender, RoutedEventArgs e)
         {
-            txtDemo.Text = "Il testo è stato modificato";
+            txtMessaggio.Text = "Login avvenuto! Benvenuto/a " + $"{user.Text.ToString()}";
         }
     }
 }

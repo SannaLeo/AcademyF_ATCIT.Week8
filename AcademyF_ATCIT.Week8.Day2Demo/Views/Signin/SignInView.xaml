@@ -1,0 +1,66 @@
+﻿<Window x:Class="AcademyF_ATCIT.Week8.Day2Demo.Views.Signin.SignInView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:viewmodels="clr-namespace:AcademyF_ATCIT.Week8.Day2Demo.ViewModels.SignIn"
+      xmlns:local="clr-namespace:AcademyF_ATCIT.Week8.Day2Demo.Views.Signin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SignInView"
+      WindowStyle="ToolWindow"
+        d:DataContext="{d:DesignInstance viewmodels:SignInViewModel}">
+    
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="Gray" CornerRadius="10" BorderThickness="5">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="1" 
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+
+                    <TextBlock Text="Authentication" 
+                             FontSize="28"
+                             Foreground="Blue"></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" FlowDirection="LeftToRight">
+                    <Label VerticalAlignment="Center" Width="100" HorizontalAlignment="Left" Margin="0, 0, 30, 0">Username:</Label>
+                    <TextBox x:Name="user" Width="100" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0, 0, 30, 0"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" FlowDirection="LeftToRight">
+                    <Label VerticalAlignment="Center" Width="100" HorizontalAlignment="Left" Margin="0, 0, 30, 0">Password:</Label>
+                    <TextBox Width="100" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0, 0, 30, 0"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Width="100" Height="25" Background="LightGreen" Command="{Binding LoginCommand}" Margin="0, 20, 0, 0">Accedi</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="5">
+                    <TextBlock x:Name="txtMessaggio" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -15,7 +15,7 @@
         <converter:DateToStringConverter x:Key="DateToString"/>
     </Window.Resources>
     <StackPanel>
-        <TextBox x:Name="txtDemo" Text="{Binding Path=Date}"/>
+        <TextBox x:Name="txtDemo" Text="{Binding Path=Date, ConverterCulture=it-IT}"/>
         <Button Click="Button_Click">Click this button</Button>
         <TextBox x:Name="txtIntegerValue" Text="{Binding Path=MyProperty2, Mode=TwoWay, Converter={StaticResource IntToString}, ConverterParameter =-1, ConverterCulture=it-IT}"/>
         <CheckBox Margin="4" IsChecked="{Binding Path=IsChecked}">Chiuso</CheckBox>

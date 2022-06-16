@@ -1,0 +1,9 @@
+﻿<Application x:Class="AcademyF_ATCIT.Week8.Esercitazione.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AcademyF_ATCIT.Week8.Esercitazione"
+             StartupUri="Views/Home.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

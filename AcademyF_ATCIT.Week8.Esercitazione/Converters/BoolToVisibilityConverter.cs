@@ -6,18 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace AcademyF_ATCIT.Week8.WPF.AppBase.Converters
+namespace AcademyF_ATCIT.Week8.Esercitazione.Converters
 {
-    public class DateToStringConverter : IValueConverter
+    public class BoolToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var date = System.Convert.ToDateTime(value);
-            if (date == DateTime.Now)
+            var chkValue = System.Convert.ToBoolean(value);
+            if (chkValue)
             {
-                return date.ToShortDateString();
+                return System.Windows.Visibility.Visible;
             }
-            else return "campo vuoto";
+            return System.Windows.Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -6,18 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace AcademyF_ATCIT.Week8.WPF.AppBase.Converters
+namespace AcademyF_ATCIT.Week8.EcommLogin.Converters
 {
-    public class DateToStringConverter : IValueConverter
+    public class DecimalToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var date = System.Convert.ToDateTime(value);
-            if (date == DateTime.Now)
-            {
-                return date.ToShortDateString();
-            }
-            else return "campo vuoto";
+            value = System.Convert.ToString(value);
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks.FontAwesome" Version="4.11.0" />
+    <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AcademyF_ATCIT.Week8.Core\AcademyF_ATCIT.Week8.Core.csproj" />
+    <ProjectReference Include="..\AcademyF_ATCIT.Week8.RepositoryMOCK\AcademyF_ATCIT.Week8.RepositoryMOCK.csproj" />
+  </ItemGroup>
+
+</Project>

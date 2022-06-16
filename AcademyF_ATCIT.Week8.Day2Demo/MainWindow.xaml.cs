@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AcademyF_ATCIT.Week8.WPF.AppBase.Views
+namespace AcademyF_ATCIT.Week8.Day2Demo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,12 +23,7 @@ namespace AcademyF_ATCIT.Week8.WPF.AppBase.Views
         public MainWindow()
         {
             InitializeComponent();
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            txtDemo.Text = "Il testo è stato modificato";
+            
         }
     }
 }

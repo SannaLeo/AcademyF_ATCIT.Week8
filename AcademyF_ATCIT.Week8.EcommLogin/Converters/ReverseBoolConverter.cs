@@ -6,18 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace AcademyF_ATCIT.Week8.WPF.AppBase.Converters
+namespace AcademyF_ATCIT.Week8.EcommLogin.Converters
 {
-    public class DateToStringConverter : IValueConverter
+    public class ReverseBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var date = System.Convert.ToDateTime(value);
-            if (date == DateTime.Now)
-            {
-                return date.ToShortDateString();
-            }
-            else return "campo vuoto";
+            if (value == null)
+                throw new InvalidProgramException("Il valore di binding non può essere nullo");
+
+            if (!(value is bool))
+                throw new InvalidProgramException($"Il valore di binding deve essere di tipo {typeof(bool).FullName}");
+
+            bool boolValue = (bool)value;
+            return !boolValue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -26,3 +28,5 @@ namespace AcademyF_ATCIT.Week8.WPF.AppBase.Converters
         }
     }
 }
+
+
